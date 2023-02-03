@@ -12,9 +12,9 @@ const TabScreen = ({ navigation }) => (
       tabBarLabelStyle: { textTransform: 'none' },
     }}
   >
-    <Tab.Screen name="Movies" component={MoviesContainer} />
-    <Tab.Screen name="Search Results" component={SearchContainer} />
-    <Tab.Screen name="TV Shows" component={TvContainer} />
+    <Tab.Screen name="Movies" component={MoviesContainer} navigation={navigation} />
+    <Tab.Screen name="Search Results" component={SearchContainer} navigation={navigation} />
+    <Tab.Screen name="TV Shows" component={TvContainer} navigation={navigation} />
   </Tab.Navigator>
 )
 

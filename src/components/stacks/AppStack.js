@@ -25,7 +25,7 @@ const AppStack = () => (
         name='Show'
         component={ShowScreen}
         options={({ route }) => ({
-          title: route.params.label
+          title: route.params.title
         })}
       />
     </Stack.Navigator>

@@ -8,3 +8,12 @@ export const getMovies = async (type) => {
     return data.results
   }
 }
+
+export const getTvShows = async (type) => {
+  if (type) {
+    const res = await fetch(`${BASE_URL}/tv/${type}?api_key=${API_KEY}`)
+    const data = await res.json()
+
+    return data.results
+  }
+}

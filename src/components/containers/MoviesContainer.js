@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Box, Text, Center, Container, Select, FormControl } from "native-base"
+import { VStack } from "native-base"
 import { getMovies } from "../services/api"
 import MoviesForm from '../forms/MoviesForm'
+import ShowList from '../lists/ShowList'
 
-const MoviesContainer = () => {
+const MoviesContainer = ({ navigation }) => {
   const [movies, setMovies] = useState([])
   const [selection, setSelection] = useState('now_playing')
 
@@ -23,16 +24,10 @@ const MoviesContainer = () => {
   }
 
   return (
-    <Container>
+    <VStack width="100%" mb={10} pb={10}>
       <MoviesForm updateSelection={updateSelection} />
-      {movies.map((movie, i) => {
-        return (
-          <Box key={i}>
-            <Text>{movie.title}</Text>
-          </Box>
-        )
-      })}
-    </Container>
+      <ShowList shows={movies} navigation={navigation} mediaType='movie' />
+    </VStack>
   )
 }
 
