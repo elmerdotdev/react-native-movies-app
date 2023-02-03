@@ -1,8 +1,22 @@
-import { View } from "native-base"
+import { useEffect, useState } from 'react'
+import { VStack } from "native-base"
+import ShowList from '../lists/ShowList'
+import SearchForm from '../forms/SearchForm'
 
-const SearchContainer = () => {
+const SearchContainer = ({ navigation }) => {
+  const [results, setResults] = useState([])
+  const [selection, setSelection] = useState('movie')
+
+  const updateResults = (results, type) => {
+    setResults(results)
+    setSelection(type)
+  }
+
   return (
-    <View></View>
+    <VStack width="100%" mb={20} pb={20}>
+      <SearchForm updateResults={updateResults} />
+      <ShowList shows={results} navigation={navigation} mediaType={selection} />
+    </VStack>
   )
 }
 

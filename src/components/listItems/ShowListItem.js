@@ -8,7 +8,7 @@ const ShowListItem = props => {
       <HStack my={2} pl={3} pr={6} alignItems="center">
         <Image source={{
           uri: `https://image.tmdb.org/t/p/w300/${image}`
-        }} alt="Alternate Text" size="xl" />
+        }} alt={!image ? "No image found" : title} size="xl" />
         <VStack px={2} width="100%" flex={1}>
           <Heading fontSize="md">{title}</Heading>
           <Text>Popularity: {popularity}</Text>

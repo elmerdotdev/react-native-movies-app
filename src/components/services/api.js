@@ -19,8 +19,9 @@ export const getTvShows = async (type) => {
 }
 
 export const getSearchResults = async (keyword, type) => {
+  console.log(`${BASE_URL}/search/${type}?api_key=${API_KEY}`)
   if (keyword) {
-    const res = await fetch(`${BASE_URL}/search/${type}?api_key=${API_KEY}`)
+    const res = await fetch(`${BASE_URL}/search/${type}?api_key=${API_KEY}&query=${keyword}`)
     const data = await res.json()
 
     return data.results
