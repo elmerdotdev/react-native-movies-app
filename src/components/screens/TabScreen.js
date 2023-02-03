@@ -10,6 +10,7 @@ const TabScreen = ({ navigation }) => (
   <Tab.Navigator
     screenOptions={{
       tabBarLabelStyle: { textTransform: 'none' },
+      tabBarIndicatorStyle: { backgroundColor: '#2c3e50' }
     }}
   >
     <Tab.Screen name="Movies" component={MoviesContainer} navigation={navigation} />
