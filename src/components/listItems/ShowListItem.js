@@ -21,7 +21,7 @@ const ShowListItem = props => {
                 showId: id
               })
             }}
-          >View</Button>
+          >More Details</Button>
         </VStack>
       </HStack>
       <Divider my={1} />

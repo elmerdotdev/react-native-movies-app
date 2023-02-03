@@ -17,3 +17,12 @@ export const getTvShows = async (type) => {
     return data.results
   }
 }
+
+export const getSearchResults = async (keyword, type) => {
+  if (keyword) {
+    const res = await fetch(`${BASE_URL}/search/${type}?api_key=${API_KEY}`)
+    const data = await res.json()
+
+    return data.results
+  }
+}
