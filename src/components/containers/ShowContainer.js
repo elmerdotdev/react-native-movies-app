@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Center, Heading, Text, View, VStack, Image, ScrollView } from "native-base"
 import { getMovie, getTvShow, getPerson } from "../services/api"
 
