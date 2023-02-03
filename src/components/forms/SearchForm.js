@@ -37,7 +37,7 @@ const SearchForm = ({ updateResults }) => {
   }
 
   return (
-    <Box w="100%" px={8} py={2}>
+    <Box w="100%" px={8} pt={2} pb={3}>
       <FormControl isRequired isInvalid={'name' in errors}>
         <Stack>
           <FormControl.Label>Search Movie/TV Show Name:</FormControl.Label>
@@ -59,7 +59,7 @@ const SearchForm = ({ updateResults }) => {
             <Select selectedValue={formData.selection} defaultValue="movie" minWidth="200" bg='#ffffff' _selectedItem={{
               bg: "teal.600",
               endIcon: <CheckIcon size="5" color="#ffffff" />
-            }} my={2} onValueChange={itemValue => setFormData({...formData, selection: itemValue})}>
+            }} mt={2} onValueChange={itemValue => setFormData({...formData, selection: itemValue})}>
               <Select.Item label="Movie" value="movie" />
               <Select.Item label="Multi" value="multi" />
               <Select.Item label="TV" value="tv" />
@@ -69,7 +69,7 @@ const SearchForm = ({ updateResults }) => {
               Search
             </Button>
           </HStack>
-          {'name' in errors && <FormControl.ErrorMessage>{errors.name}</FormControl.ErrorMessage>}
+          {'name' in errors ? <FormControl.ErrorMessage>{errors.name}</FormControl.ErrorMessage> : <FormControl.HelperText>Please select a search type</FormControl.HelperText>}
         </Stack>
       </FormControl>
     </Box>
