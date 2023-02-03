@@ -12,7 +12,7 @@ export const getMovies = async (type) => {
 
 // get movie by id
 export const getMovie = async (id) => {
-  if (type) {
+  if (id) {
     const res = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
     const data = await res.json()
 
@@ -32,7 +32,7 @@ export const getTvShows = async (type) => {
 
 // get tv show by id
 export const getTvShow = async (id) => {
-  if (type) {
+  if (id) {
     const res = await fetch(`${BASE_URL}/tv/${id}?api_key=${API_KEY}`)
     const data = await res.json()
 
@@ -47,5 +47,15 @@ export const getSearchResults = async (keyword, type) => {
     const data = await res.json()
 
     return data.results
+  }
+}
+
+// get person by id
+export const getPerson = async (id) => {
+  if (id) {
+    const res = await fetch(`${BASE_URL}/person/${id}?api_key=${API_KEY}`)
+    const data = await res.json()
+
+    return data
   }
 }

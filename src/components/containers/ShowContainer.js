@@ -1,10 +1,29 @@
-import { Text, View } from "native-base"
+import { useEffect, useState } from 'react'
+import { Center, Text, View, VStack } from "native-base"
+import { getMovie, getTvShow, getPerson } from "../services/api"
 
 const ShowContainer = ({ navigation, route }) => {
+  const { showId, mediaType } = route.params
+  const [data, setData] = useState({})
+
+  if (mediaType === 'movie') {
+      getMovie(showId).then(result => setData(result))
+  } else if (mediaType === 'tv') {
+      getTvShow(showId).then(result => setData(result))
+  } else if (mediaType === 'person') {
+    getPerson(showId).then(result => setData(result))
+  }
+
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+
   return (
-    <View>
-      <Text>{route.params.mediaType} {route.params.showId}</Text>
-    </View>
+    <Center>
+      <VStack>
+
+      </VStack>
+    </Center>
   )
 }
 
