@@ -13,7 +13,7 @@ const AppStack = () => (
         component={TabScreen}
         options={{
           title: 'Movies App',
-          headerBackTitle: 'Back to List',
+          headerTitleAlign: 'center',
           headerStyle: {
             backgroundColor: '#2c3e50'
           },
@@ -26,7 +26,9 @@ const AppStack = () => (
         name='Show'
         component={ShowScreen}
         options={({ route }) => ({
-          title: route.params.title
+          title: route.params.title,
+          headerBackTitle: 'Back to List',
+          headerTitleAlign: 'center'
         })}
       />
     </Stack.Navigator>
