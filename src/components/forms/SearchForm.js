@@ -5,7 +5,7 @@ import { getSearchResults } from '../services/api'
 
 const SearchForm = ({ updateResults }) => {
   const [keyword, setKeyword] = useState(null)
-  const [selection, setSelection] = useState(null)
+  const [selection, setSelection] = useState('movie')
 
   const onSubmit = () => {
     getSearchResults(keyword, selection).then(
