@@ -19,7 +19,7 @@ const SearchForm = ({ updateResults }) => {
   }
 
   return (
-    <Box w="100%" px={8}>
+    <Box w="100%" px={8} py={2}>
       <FormControl isRequired>
         <Stack>
           <FormControl.Label>Search Movie/TV Show Name:</FormControl.Label>

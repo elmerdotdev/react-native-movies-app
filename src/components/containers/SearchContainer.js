@@ -13,7 +13,7 @@ const SearchContainer = ({ navigation }) => {
   }
 
   return (
-    <VStack width="100%" mb={20} pb={20}>
+    <VStack width="100%" mb={24} pb={24}>
       <SearchForm updateResults={updateResults} />
       <ShowList shows={results} navigation={navigation} mediaType={selection} />
     </VStack>
