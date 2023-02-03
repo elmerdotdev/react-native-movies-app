@@ -13,12 +13,13 @@ const AppStack = () => (
         component={TabScreen}
         options={{
           title: 'Movies App',
+          headerBackTitle: 'Back to List',
           headerStyle: {
             backgroundColor: '#2c3e50'
           },
           headerTitleStyle: {
             color: '#fff'
-          }
+          },
         }}
       />
       <Stack.Screen
