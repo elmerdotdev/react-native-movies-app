@@ -1,0 +1,10 @@
+import { API_KEY, BASE_URL } from "../config/api_config";
+
+export const getMovies = async (type) => {
+  if (type) {
+    const res = await fetch(`${BASE_URL}/movie/${type}?api_key=${API_KEY}`)
+    const data = await res.json()
+
+    return data.results
+  }
+}
